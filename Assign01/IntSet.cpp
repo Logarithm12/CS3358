@@ -48,36 +48,41 @@ using namespace std;
 
 IntSet::IntSet()
 {
-   cout << "IntSet() is not implemented yet..." << endl;
+   data[MAX_SIZE] = {};
+   used = 0;
 }
 
-int IntSet::size() const
+int IntSet::size() const // implemented
 {
-   cout << "size() is not implemented yet..." << endl;
-   return 0; // dummy value returned
+   return used;
 }
 
-
-bool IntSet::isEmpty() const
+bool IntSet::isEmpty() const // implemented
 {
-   cout << "isEmpty() is not implemented yet..." << endl;
-   return false; // dummy value returned
+   return used == 0;
 }
 
-bool IntSet::contains(int anInt) const
+bool IntSet::contains(int anInt) const // implemented
 {
-   cout << "contains() is not implemented yet..." << endl;
-   return 0; // dummy value returned
+   bool isContained = false;
+   int i;
+   for (i = 0; i < used; i++)
+   {
+      if (data[i] == anInt)
+         isContained = true;
+   }
+
+   return isContained;
 }
 
-bool IntSet::isSubsetOf(const IntSet& otherIntSet) const
+bool IntSet::isSubsetOf(const IntSet &otherIntSet) const
 {
    cout << "isSubsetOf() is not implemented yet..." << endl;
    return false; // dummy value returned
 }
 
-void IntSet::DumpData(ostream& out) const
-{  // already implemented ... DON'T change anything
+void IntSet::DumpData(ostream &out) const
+{ // already implemented ... DON'T change anything
    if (used > 0)
    {
       out << data[0];
@@ -86,42 +91,83 @@ void IntSet::DumpData(ostream& out) const
    }
 }
 
-IntSet IntSet::unionWith(const IntSet& otherIntSet) const
+IntSet IntSet::unionWith(const IntSet &otherIntSet) const
 {
    cout << "unionWith() is not implemented yet..." << endl;
    return IntSet(); // dummy IntSet object returned
 }
 
-IntSet IntSet::intersect(const IntSet& otherIntSet) const
+IntSet IntSet::intersect(const IntSet &otherIntSet) const
 {
    cout << "intersect() is not implemented yet..." << endl;
    return IntSet(); // dummy IntSet object returned
 }
 
-IntSet IntSet::subtract(const IntSet& otherIntSet) const
+IntSet IntSet::subtract(const IntSet &otherIntSet) const
 {
    cout << "subtract() is not implemented yet..." << endl;
    return IntSet(); // dummy IntSet object returned
 }
 
-void IntSet::reset()
+void IntSet::reset() // implemented
 {
-   cout << "reset() is not implemented yet..." << endl;
+   used = 0;
 }
 
-bool IntSet::add(int anInt)
+bool IntSet::add(int anInt) // implemented
 {
-   cout << "add() is not implemented yet..." << endl;
-   return false; // dummy value returned
+   bool isAdded{false};
+   bool isValidtoAdd{true};
+   int i{};
+   if (used < MAX_SIZE)
+   {
+      isValidtoAdd = !(contains(anInt));
+   }
+   if (isValidtoAdd)
+   {
+      data[used] = anInt;
+      ++used;
+      isAdded = true;
+   }
+   return isAdded;
 }
 
-bool IntSet::remove(int anInt)
+bool IntSet::remove(int anInt) // implemented
 {
-   cout << "remove() is not implemented yet..." << endl;
-   return false; // dummy value returned
+   bool isRemoved{false};
+   bool isValidtoRemove{true};
+   int i{};
+   if (used > 0)
+   {
+      isValidtoRemove = contains(anInt);
+   }
+   if (isValidtoRemove)
+   {
+      for (i = 0; i < used; ++i)
+      {
+         if (data[i] == anInt)
+         {
+            if (used != 1)
+            {
+               int temp{};
+               temp = data[used - 1];
+               data[used - 1] = data[i];
+               data[i] = temp;
+               --used;
+               isRemoved = true;
+            }
+            else
+            {
+               --used;
+               isRemoved = true;
+            }
+         }
+      }
+   }
+   return isRemoved;
 }
 
-bool equal(const IntSet& is1, const IntSet& is2)
+bool equal(const IntSet &is1, const IntSet &is2)
 {
    cout << "equal() is not implemented yet..." << endl;
    return false; // dummy value returned
