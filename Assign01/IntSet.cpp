@@ -46,10 +46,9 @@
 #include <cassert>
 using namespace std;
 
-IntSet::IntSet()
+IntSet::IntSet() : used{0} // implemented
 {
    data[MAX_SIZE] = {};
-   used = 0;
 }
 
 int IntSet::size() const // implemented
@@ -75,10 +74,18 @@ bool IntSet::contains(int anInt) const // implemented
    return isContained;
 }
 
-bool IntSet::isSubsetOf(const IntSet &otherIntSet) const
+bool IntSet::isSubsetOf(const IntSet &otherIntSet) const // implemented
 {
-   cout << "isSubsetOf() is not implemented yet..." << endl;
-   return false; // dummy value returned
+   bool isItSubSetOf{true};
+   int i{};
+   for (i = 0; i < used; ++i)
+   {
+      if (isItSubSetOf == true)
+      {
+         isItSubSetOf = otherIntSet.contains(data[i]);
+      }
+   }
+   return isItSubSetOf; // dummy value returned
 }
 
 void IntSet::DumpData(ostream &out) const
@@ -117,8 +124,7 @@ void IntSet::reset() // implemented
 bool IntSet::add(int anInt) // implemented
 {
    bool isAdded{false};
-   bool isValidtoAdd{true};
-   int i{};
+   bool isValidtoAdd{false};
    if (used < MAX_SIZE)
    {
       isValidtoAdd = !(contains(anInt));
