@@ -46,21 +46,21 @@
 #include <cassert>
 using namespace std;
 
-IntSet::IntSet() : used{0}, data{} // implemented
+IntSet::IntSet() : used{0}, data{}
 {
 }
 
-int IntSet::size() const // implemented
+int IntSet::size() const
 {
    return used;
 }
 
-bool IntSet::isEmpty() const // implemented
+bool IntSet::isEmpty() const
 {
    return used == 0;
 }
 
-bool IntSet::contains(int anInt) const // implemented
+bool IntSet::contains(int anInt) const
 {
    bool isContained = false;
    int i;
@@ -73,7 +73,7 @@ bool IntSet::contains(int anInt) const // implemented
    return isContained;
 }
 
-bool IntSet::isSubsetOf(const IntSet &otherIntSet) const // implemented
+bool IntSet::isSubsetOf(const IntSet &otherIntSet) const
 {
    bool isItSubSetOf{true};
    int i{};
@@ -97,7 +97,7 @@ void IntSet::DumpData(ostream &out) const
    }
 }
 
-IntSet IntSet::unionWith(const IntSet &otherIntSet) const // implemented
+IntSet IntSet::unionWith(const IntSet &otherIntSet) const
 {
    IntSet returnedIS{};
    int i{0};
@@ -116,7 +116,7 @@ IntSet IntSet::unionWith(const IntSet &otherIntSet) const // implemented
    return returnedIS;
 }
 
-IntSet IntSet::intersect(const IntSet &otherIntSet) const // implemented
+IntSet IntSet::intersect(const IntSet &otherIntSet) const
 {
    int i{0};
    IntSet returnedIS{};
@@ -143,7 +143,7 @@ IntSet IntSet::subtract(const IntSet &otherIntSet) const
    {
       returnedIS.add(this->data[i]);
    }
-   
+
    for (i = 0; i < this->size(); ++i)
    {
       if (otherIntSet.contains(this->data[i]))
@@ -154,12 +154,12 @@ IntSet IntSet::subtract(const IntSet &otherIntSet) const
    return returnedIS;
 }
 
-void IntSet::reset() // implemented
+void IntSet::reset()
 {
    used = 0;
 }
 
-bool IntSet::add(int anInt) // implemented
+bool IntSet::add(int anInt)
 {
    bool isAdded{false};
    bool isValidtoAdd{false};
@@ -176,12 +176,12 @@ bool IntSet::add(int anInt) // implemented
    return isAdded;
 }
 
-bool IntSet::remove(int anInt) // implemented
+bool IntSet::remove(int anInt)
 {
    bool isRemoved{false};
    bool isValidtoRemove{true};
    int i{};
-   isValidtoRemove = contains(anInt);
+   isValidtoRemove = (contains(anInt) && used > 0);
    if (isValidtoRemove)
    {
       for (i = 0; i < used; ++i)
@@ -208,12 +208,19 @@ bool IntSet::remove(int anInt) // implemented
    return isRemoved;
 }
 
-bool equal(const IntSet &is1, const IntSet &is2) // implemented
+bool equal(const IntSet &is1, const IntSet &is2)
 {
-   IntSet tmpIS = is1.subtract(is2);
-   if (tmpIS.size() == 0)
+   if (is1.size() == is2.size())
    {
-      return true;
+      IntSet tmpIS = is1.subtract(is2);
+      if (tmpIS.size() == 0)
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }
    }
    else
    {

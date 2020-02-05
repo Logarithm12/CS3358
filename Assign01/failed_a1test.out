@@ -301,7 +301,7 @@ Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 13 read.
 is1 is equal to is3
 Enter choice: e read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is2 is not equal to is3
+is2 is equal to is3
 Enter choice: q read.
 Quit option selected...bye
 Press Enter or Return when ready...
