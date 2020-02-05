@@ -216,7 +216,7 @@ Enter choice: d read.
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
    is1: 8  1  2  5  0  7  4  -1
    is2: 4  9  3  5  2  6
-   is3: 6  3  9
+   is3: 9  3  6
 Enter choice: b read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
 is3 is subset of is2
@@ -227,7 +227,7 @@ Enter choice: d read.
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
    is1: 8  1  2  5  0  7  4  -1
    is2: 4  5  2
-   is3: 6  3  9
+   is3: 9  3  6
 Enter choice: k read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
 Enter integer value 6 read.

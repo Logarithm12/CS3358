@@ -180,7 +180,7 @@ bool IntSet::remove(int anInt)
 {
    bool isRemoved{false};
    bool isValidtoRemove{true};
-   int i{};
+   int i{}, j{0};
    isValidtoRemove = (contains(anInt) && used > 0);
    if (isValidtoRemove)
    {
@@ -190,18 +190,17 @@ bool IntSet::remove(int anInt)
          {
             if (used != 1)
             {
-               int temp{};
-               temp = data[used - 1];
-               data[used - 1] = data[i];
-               data[i] = temp;
-               --used;
+               for (j = i; j < used; ++j)
+               {
+                  data[j] = data[j + 1];
+               }
                isRemoved = true;
             }
             else
             {
-               --used;
                isRemoved = true;
             }
+            --used;
          }
       }
    }
