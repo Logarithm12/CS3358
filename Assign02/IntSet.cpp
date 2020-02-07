@@ -127,7 +127,7 @@ IntSet &IntSet::operator=(const IntSet &rhs)
       capacity = rhs.capacity;
       used = rhs.used;
    }
-   cout << " assignment finished ";
+   cout << " assignment finished " << endl;
    return *this;
 }
 
