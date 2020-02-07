@@ -121,6 +121,7 @@ IntSet &IntSet::operator=(const IntSet &rhs)
       int *newData = new int[rhs.capacity];
       for (int i = 0; i < rhs.used; ++i)
          newData[i] = rhs.data[i];
+      cout << "deallocation";
       delete[] data;
       data = newData;
       capacity = rhs.capacity;
