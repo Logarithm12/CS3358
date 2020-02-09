@@ -388,7 +388,6 @@ int main(int argc, char* argv[])
             cout << "is1 has been unioned with is3" << endl;
             break;
          case 21:
-            cout << "dingdongdingdong" << endl;
             is2 = is2.unionWith(is1);
             cout << "is2 has been unioned with is1" << endl;
             break;

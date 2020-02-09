@@ -115,19 +115,16 @@ IntSet::~IntSet()
 
 IntSet &IntSet::operator=(const IntSet &rhs)
 {
-   cout << " assignment called ";
    if (this != &rhs)
    {
       int *newData = new int[rhs.capacity];
       for (int i = 0; i < rhs.used; ++i)
          newData[i] = rhs.data[i];
-      cout << "deallocation";
       delete[] data;
       data = newData;
       capacity = rhs.capacity;
       used = rhs.used;
    }
-   cout << " assignment finished " << endl;
    return *this;
 }
 
@@ -180,15 +177,12 @@ void IntSet::DumpData(ostream &out) const
 
 IntSet IntSet::unionWith(const IntSet &otherIntSet) const
 {
-   cout << " thing blaghrsfhlsparkgle ";
    IntSet returnedIS{*this};
    int i{0};
-   cout << " thing denied ";
    for (i = 0; i < otherIntSet.used; ++i)
    {
       if (!(this->contains(otherIntSet.data[i])))
       {
-         cout << " thing is added ";
          returnedIS.add(otherIntSet.data[i]);
       }
    }
@@ -214,7 +208,6 @@ IntSet IntSet::subtract(const IntSet &otherIntSet) const
    int i{0};
    IntSet returnedIS{*this};
 
-
    for (i = 0; i < this->used; ++i)
    {
       if (otherIntSet.contains(this->data[i]))
@@ -234,8 +227,7 @@ bool IntSet::add(int anInt)
 {
    bool isAdded{false};
    bool isValidtoAdd{!(contains(anInt))};
-   bool isFull{used < capacity};
-   //std::cout << "Dingdong " << isValidtoAdd << " " << isFull << endl;
+   bool isFull{(used > capacity)};
    if (isValidtoAdd && !isFull)
    {
       data[used] = anInt;
@@ -244,7 +236,6 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      //cout << "resize called" << endl;
       resize(capacity * 2);
       data[used] = anInt;
       ++used;
