@@ -85,9 +85,13 @@ void IntSet::resize(int new_capacity)
       new_capacity = 1;
    capacity = new_capacity;
    int *newData = new int[capacity];
+
    for (int i = 0; i < used; ++i)
       newData[i] = data[i];
-   delete[] data;
+   
+   cout << "failed at delete" << endl;
+   delete [] data;
+   cout << "failed at assignment" << endl;
    data = newData;
    cout << "resize finished, new_cap: " << new_capacity << " current cap: "<< capacity <<endl;
 }
