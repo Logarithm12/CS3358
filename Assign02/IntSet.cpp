@@ -78,6 +78,7 @@ using namespace std;
 
 void IntSet::resize(int new_capacity)
 {
+   cout << "resize called, new_cap: " << new_capacity << " current cap: "<< capacity <<endl;
    if (new_capacity < used)
       new_capacity = used;
    if (new_capacity < 1)
@@ -88,6 +89,7 @@ void IntSet::resize(int new_capacity)
       newData[i] = data[i];
    delete[] data;
    data = newData;
+   cout << "resize finished, new_cap: " << new_capacity << " current cap: "<< capacity <<endl;
 }
 
 IntSet::IntSet(int initial_capacity) : capacity{initial_capacity}, used{0}
@@ -239,13 +241,15 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      int newCap = int(capacity*1.5);
+      int newCap = int (((capacity * 3)/2) +1);
       cout << "newCap: " << newCap << endl;
-      resize(newCap);
+      resize((capacity*2)/2 +1);
       data[used] = anInt;
+      cout << "value added: " << anInt << " location: " << used << endl;
       ++used;
       isAdded = true;
    }
+   cout << "exit add func" << endl;
    return isAdded;
 }
 
