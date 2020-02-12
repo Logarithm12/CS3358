@@ -248,9 +248,10 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      int newCap = int (((capacity * 3)/2) +1);
+      int newCap = (int (capacity * 1.5));
+      newCap++;
       cout << "newCap: " << newCap << endl;
-      resize((capacity*2)/2 +1);
+      resize(newCap);
       data[used] = anInt;
       cout << "value added: " << anInt << " location: " << used << endl;
       ++used;
