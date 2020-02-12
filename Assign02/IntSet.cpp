@@ -248,8 +248,7 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      int newCap = (int (capacity * 1.5));
-      newCap++;
+      int newCap = ((int (capacity * 1.5)) + 1);
       cout << "newCap: " << newCap << endl;
       resize(newCap);
       data[used] = anInt;
