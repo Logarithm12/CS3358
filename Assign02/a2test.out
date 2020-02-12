@@ -14,12 +14,51 @@ Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 12 read.
 is1 is subset of is2
 Enter choice: u read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
+union started
+Union finished
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
 is3 has been unioned with is1
 Enter choice: s read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
 is2 has been subtracted from is3
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
    is1: (empty)
    is2: (empty)
    is3: (empty)
@@ -31,80 +70,213 @@ Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 8 read.
+exit add func
 8 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 1 read.
+exit add func
 1 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 2 read.
+newCap: 2
+resize called, new_cap: 2 current cap: 1
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 2 current cap: 2
+value added: 2 location: 2
+exit add func
 2 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 5 read.
+newCap: 4
+resize called, new_cap: 4 current cap: 2
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 4 current cap: 4
+value added: 5 location: 3
+exit add func
 5 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 8 read.
+exit add func
 8 not added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 0 read.
+exit add func
 0 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 7 read.
+newCap: 7
+resize called, new_cap: 7 current cap: 4
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 7 current cap: 7
+value added: 7 location: 5
+exit add func
 7 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 4 read.
+exit add func
 4 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value -1 read.
+exit add func
 -1 added to is1
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 2 read.
+exit add func
 2 not added to is1
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  33DumpData finished
+
    is2: (empty)
    is3: (empty)
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 4 read.
+exit add func
 4 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 9 read.
+exit add func
 9 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 3 read.
+newCap: 2
+resize called, new_cap: 2 current cap: 1
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 2 current cap: 2
+value added: 3 location: 2
+exit add func
 3 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 5 read.
+newCap: 4
+resize called, new_cap: 4 current cap: 2
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 4 current cap: 4
+value added: 5 location: 3
+exit add func
 5 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 2 read.
+exit add func
 2 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 6 read.
+newCap: 7
+resize called, new_cap: 7 current cap: 4
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 7 current cap: 7
+value added: 6 location: 5
+exit add func
 6 added to is2
 Enter choice: a read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
 Enter integer value 4 read.
+exit add func
 4 not added to is2
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  35DumpData finished
+
+   is2: DumpData started
+4  9  3  5  2  6DumpData finished
+
    is3: (empty)
 Enter choice: z read.
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
@@ -114,7 +286,7 @@ Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123
 Enter choice: c read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value -1 read.
--1 is in is1
+-1 is not in is1
 Enter choice: c read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
 Enter integer value 6 read.
@@ -131,12 +303,87 @@ Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 21 read.
 is2 is not subset of is1
 Enter choice: u read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
+union started
+exit add func
+exit add func
+newCap: 2
+resize called, new_cap: 2 current cap: 1
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 2 current cap: 2
+value added: 3 location: 2
+exit add func
+newCap: 4
+resize called, new_cap: 4 current cap: 2
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 4 current cap: 4
+value added: 5 location: 3
+exit add func
+exit add func
+newCap: 7
+resize called, new_cap: 7 current cap: 4
+failed at less than 1
+failed at new capacity assignment
+failed at new data allocation
+failed at putting old data into new data
+failed at delete
+failed at assignment
+resize finished, new_cap: 7 current cap: 7
+value added: 6 location: 5
+exit add func
+Union finished
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
 is3 has been unioned with is2
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  9  3  5  2  6
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  35DumpData finished
+
+   is2: DumpData started
+4  9  3  5  2  6DumpData finished
+
+   is3: DumpData started
+4  9  3  5  2  6DumpData finished
+
 Enter choice: k read.
 Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
 Enter integer value 3 read.
@@ -150,10 +397,41 @@ Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
 Enter integer value 9 read.
 9 removed from is3
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  35DumpData finished
+
+   is2: DumpData started
+4  9  3  5  2  6DumpData finished
+
+   is3: DumpData started
+4  5  2DumpData finished
+
 Enter choice: b read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
 is3 is subset of is1
@@ -167,210 +445,109 @@ Enter choice: e read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 12 read.
 is1 is not equal to is2
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  35DumpData finished
+
+   is2: DumpData started
+4  9  3  5  2  6DumpData finished
+
+   is3: DumpData started
+4  5  2DumpData finished
+
 Enter choice: i read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
 is3 has been intersected with is2
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
+   is1: DumpData started
+8  1  2  5  0  7  4  35DumpData finished
+
+   is2: DumpData started
+4  9  3  5  2  6DumpData finished
+
+   is3: DumpData started
+4  5  2DumpData finished
+
 Enter choice: u read.
 Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
+union started
+exit add func
+exit add func
+exit add func
+Union finished
+assignment called
+assignment entered
+assingment delete failed
+bad assignment for new data in =
+variable assignemnt failed
+assignment exit
 is3 has been unioned with is2
 Enter choice: d read.
+case d called
 Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2  9  3  6
-Enter choice: e read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
-is3 is equal to is2
-Enter choice: e read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 13 read.
-is1 is not equal to is3
-Enter choice: i read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
-is3 has been intersected with is1
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
-is3 has been unioned with is2
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 4  5  2  9  3  6
-Enter choice: s read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
-is1 has been subtracted from is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  9  3  5  2  6
-   is3: 9  3  6
-Enter choice: b read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 32 read.
-is3 is subset of is2
-Enter choice: s read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is3 has been subtracted from is2
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  5  2
-   is3: 9  3  6
-Enter choice: k read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value 6 read.
-6 removed from is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  5  2
-   is3: 9  3
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
-is3 has been unioned with is1
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 4  5  2
-   is3: 9  3  8  1  2  5  0  7  4  -1
-Enter choice: z read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1 has 8 items
-   is2 has 3 items
-   is3 has 10 items
-Enter choice: b read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 13 read.
-is1 is subset of is3
-Enter choice: b read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 31 read.
-is3 is not subset of is1
-Enter choice: s read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is3 has been subtracted from is2
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: (empty)
-   is3: 9  3  8  1  2  5  0  7  4  -1
-Enter choice: z read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1 has 8 items
-   is2 has 0 items
-   is3 has 10 items
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is2 has been unioned with is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 9  3  8  1  2  5  0  7  4  -1
-   is3: 9  3  8  1  2  5  0  7  4  -1
-Enter choice: s read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 21 read.
-is1 has been subtracted from is2
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1
-   is2: 9  3
-   is3: 9  3  8  1  2  5  0  7  4  -1
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 12 read.
-is1 has been unioned with is2
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1  9  3
-   is2: 9  3
-   is3: 9  3  8  1  2  5  0  7  4  -1
-Enter choice: e read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 12 read.
-is1 is not equal to is2
-Enter choice: e read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 13 read.
-is1 is equal to is3
-Enter choice: e read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is2 is not equal to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
-Enter integer value 11 read.
-11 added to is1
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 1 read.
-Enter integer value -6 read.
--6 added to is1
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
-Enter integer value -22 read.
--22 added to is2
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 2 read.
-Enter integer value 222 read.
-222 added to is2
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value -6 read.
--6 added to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value -2 read.
--2 added to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value -4 read.
--4 added to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value -8 read.
--8 added to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value 33 read.
-33 added to is3
-Enter choice: a read.
-Enter object # (1 = is1, 2 = is2, 3 = is3) 3 read.
-Enter integer value 999 read.
-999 added to is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1  9  3  11  -6
-   is2: 9  3  -22  222
-   is3: 9  3  8  1  2  5  0  7  4  -1  -6  -2  -4  -8  33  999
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 21 read.
-is2 has been unioned with is1
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1  9  3  11  -6
-   is2: 9  3  -22  222  8  1  2  5  0  7  4  -1  11  -6
-   is3: 9  3  8  1  2  5  0  7  4  -1  -6  -2  -4  -8  33  999
-Enter choice: i read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 13 read.
-is1 has been intersected with is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1  9  3  -6
-   is2: 9  3  -22  222  8  1  2  5  0  7  4  -1  11  -6
-   is3: 9  3  8  1  2  5  0  7  4  -1  -6  -2  -4  -8  33  999
-Enter choice: u read.
-Enter object_pair # (12 for is1.OP(is2), 32 for is3.OP(is2),...) 23 read.
-is2 has been unioned with is3
-Enter choice: d read.
-Enter hybrid # (1 for is1, 23 for is2 and is3, 123 for is1, is2 and is3,...) 123 read.
-   is1: 8  1  2  5  0  7  4  -1  9  3  -6
-   is2: 9  3  -22  222  8  1  2  5  0  7  4  -1  11  -6  -2  -4  -8  33  999
-   is3: 9  3  8  1  2  5  0  7  4  -1  -6  -2  -4  -8  33  999
-Enter choice: q read.
-Quit option selected...bye
-Press Enter or Return when ready...
+tccSet1
+tccSet2
+tccSet3
+tccSet1reset
+tccSet2reset
+tccSet3reset
+assignment called
+assignment entered
+assingment delete failed
