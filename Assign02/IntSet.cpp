@@ -228,6 +228,9 @@ bool IntSet::add(int anInt)
    bool isAdded{false};
    bool isValidtoAdd{!(contains(anInt))};
    bool isFull{(used > capacity)};
+   if(!isValidtoAdd){
+      cerr << "Value already in set" << endl;
+   }
    if (isValidtoAdd && !isFull)
    {
       data[used] = anInt;
@@ -236,7 +239,9 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      resize(capacity * 2);
+      int newCap = int(capacity*1.5);
+      cout << "newCap: " << newCap << endl;
+      resize(newCap);
       data[used] = anInt;
       ++used;
       isAdded = true;
@@ -249,7 +254,10 @@ bool IntSet::remove(int anInt)
    bool isRemoved{false};
    bool isValidtoRemove{true};
    int i{}, j{0};
-   isValidtoRemove = (contains(anInt) && used > 0);
+   isValidtoRemove = contains(anInt);
+   if(!isValidtoRemove){
+      cerr << "Value not in set"<< endl;
+   }
    if (isValidtoRemove)
    {
       for (i = 0; i < used; ++i)
@@ -258,7 +266,7 @@ bool IntSet::remove(int anInt)
          {
             if (used != 1)
             {
-               for (j = i; j < used; ++j)
+               for (j = i; j < used - 1; ++j)
                {
                   data[j] = data[j + 1];
                }
