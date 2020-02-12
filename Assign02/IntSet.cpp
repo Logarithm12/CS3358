@@ -78,14 +78,14 @@ using namespace std;
 
 void IntSet::resize(int new_capacity)
 {
-   if (new_capacity < used)
-      new_capacity = used;
-   if (new_capacity < 1)
-      new_capacity = 1;
+   if (new_capacity < used){
+      new_capacity = used;}
+   if (new_capacity < 1){
+      new_capacity = 1;}
    capacity = new_capacity;
    int *newData = new int[capacity];
-   for (int i = 0; i < used; ++i)
-      newData[i] = data[i];
+   for (int i = 0; i < used; ++i){
+      newData[i] = data[i];}
    
    delete [] data;
    data = newData;
@@ -119,8 +119,8 @@ IntSet &IntSet::operator=(const IntSet &rhs)
    if (this != &rhs)
    {
       int *newData = new int[rhs.capacity];
-      for (int i = 0; i < rhs.used; ++i)
-         newData[i] = rhs.data[i];
+      for (int i = 0; i < rhs.used; ++i){
+         newData[i] = rhs.data[i];}
       delete [] data;
       data = newData;
       capacity = rhs.capacity;
