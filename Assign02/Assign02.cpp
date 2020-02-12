@@ -121,24 +121,17 @@ int main(int argc, char* argv[])
          }
          break;
       case 'd': case 'D':
-         cout << "case d called" << endl;
          hybridNum = get_hybrid_num(argc);
          /* Quiz: Why is the following block written in such
                   a weird-looking fashion? */
          {
             {
                IntSet tccSet1 = is1;
-               cout << "tccSet1" << endl;
                IntSet tccSet2 = is2;
-               cout << "tccSet2" << endl;
                IntSet tccSet3 = is3;
-               cout << "tccSet3" << endl;
                tccSet1.reset();
-               cout << "tccSet1reset" << endl;
                tccSet2.reset();
-               cout << "tccSet2reset" << endl;
                tccSet3.reset();
-               cout << "tccSet3reset" << endl;
             }
             {
                IntSet taoSet1;
