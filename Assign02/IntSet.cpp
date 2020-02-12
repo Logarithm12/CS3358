@@ -124,16 +124,22 @@ IntSet::~IntSet()
 
 IntSet &IntSet::operator=(const IntSet &rhs)
 {
+   cout << "assignment called" << endl;
    if (this != &rhs)
    {
+      cout << "assignment entered" << endl;
       int *newData = new int[rhs.capacity];
       for (int i = 0; i < rhs.used; ++i)
          newData[i] = rhs.data[i];
-      delete[] data;
+      cout << "assingment delete failed" << endl;
+      delete [] data;
+      cout << "bad assignment for new data in =" << endl;
       data = newData;
+      cout << "variable assignemnt failed" << endl;
       capacity = rhs.capacity;
       used = rhs.used;
    }
+   cout << "assignment exit" << endl;
    return *this;
 }
 
@@ -176,18 +182,21 @@ bool IntSet::isSubsetOf(const IntSet &otherIntSet) const
 
 void IntSet::DumpData(ostream &out) const
 { // already implemented ... DON'T change anything
+   cout << "DumpData started" << endl;
    if (used > 0)
    {
       out << data[0];
       for (int i = 1; i < used; ++i)
          out << "  " << data[i];
    }
+   cout << "DumpData finished" << endl;
 }
 
 IntSet IntSet::unionWith(const IntSet &otherIntSet) const
 {
    IntSet returnedIS{*this};
    int i{0};
+   cout << "union started" << endl;
    for (i = 0; i < otherIntSet.used; ++i)
    {
       if (!(this->contains(otherIntSet.data[i])))
@@ -195,6 +204,7 @@ IntSet IntSet::unionWith(const IntSet &otherIntSet) const
          returnedIS.add(otherIntSet.data[i]);
       }
    }
+   cout << "Union finished" << endl;
    return returnedIS;
 }
 
