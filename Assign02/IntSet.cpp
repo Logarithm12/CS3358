@@ -81,11 +81,14 @@ void IntSet::resize(int new_capacity)
    cout << "resize called, new_cap: " << new_capacity << " current cap: "<< capacity <<endl;
    if (new_capacity < used)
       new_capacity = used;
+   cout << "failed at less than 1"<<endl;
    if (new_capacity < 1)
       new_capacity = 1;
+   cout << "failed at new capacity assignment" << endl;
    capacity = new_capacity;
+   cout << "failed at new data allocation" << endl;
    int *newData = new int[capacity];
-
+   cout << "failed at putting old data into new data" << endl;
    for (int i = 0; i < used; ++i)
       newData[i] = data[i];
    
