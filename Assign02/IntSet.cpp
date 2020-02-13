@@ -78,16 +78,22 @@ using namespace std;
 
 void IntSet::resize(int new_capacity)
 {
-   if (new_capacity < used){
-      new_capacity = used;}
-   if (new_capacity < 1){
-      new_capacity = 1;}
+   if (new_capacity < used)
+   {
+      new_capacity = used;
+   }
+   if (new_capacity < 1)
+   {
+      new_capacity = 1;
+   }
    capacity = new_capacity;
    int *newData = new int[capacity];
-   for (int i = 0; i < used; ++i){
-      newData[i] = data[i];}
-   
-   delete [] data;
+   for (int i = 0; i < used; ++i)
+   {
+      newData[i] = data[i];
+   }
+
+   delete[] data;
    data = newData;
 }
 
@@ -119,9 +125,11 @@ IntSet &IntSet::operator=(const IntSet &rhs)
    if (this != &rhs)
    {
       int *newData = new int[rhs.capacity];
-      for (int i = 0; i < rhs.used; ++i){
-         newData[i] = rhs.data[i];}
-      delete [] data;
+      for (int i = 0; i < rhs.used; ++i)
+      {
+         newData[i] = rhs.data[i];
+      }
+      delete[] data;
       data = newData;
       capacity = rhs.capacity;
       used = rhs.used;
@@ -229,7 +237,8 @@ bool IntSet::add(int anInt)
    bool isAdded{false};
    bool isValidtoAdd{!(contains(anInt))};
    bool isFull{(used > capacity)};
-   if(!isValidtoAdd){
+   if (!isValidtoAdd)
+   {
       cerr << "Value already in set" << endl;
    }
    if (isValidtoAdd && !isFull)
@@ -240,7 +249,7 @@ bool IntSet::add(int anInt)
    }
    else if (isValidtoAdd && isFull)
    {
-      int newCap = ((int (capacity * 1.5)) + 1);
+      int newCap = ((int(capacity * 1.5)) + 1);
       resize(newCap);
       data[used] = anInt;
       ++used;
@@ -255,8 +264,9 @@ bool IntSet::remove(int anInt)
    bool isValidtoRemove{true};
    int i{}, j{0};
    isValidtoRemove = contains(anInt);
-   if(!isValidtoRemove){
-      cerr << "Value not in set"<< endl;
+   if (!isValidtoRemove)
+   {
+      cerr << "Value not in set" << endl;
    }
    if (isValidtoRemove)
    {
