@@ -68,7 +68,6 @@ sequence::sequence(const sequence &source) : used{source.used}, current_index{so
 sequence::~sequence()
 {
 	delete[] data;
-	//data = NULL;
 }
 
 // MODIFICATION MEMBER FUNCTIONS
