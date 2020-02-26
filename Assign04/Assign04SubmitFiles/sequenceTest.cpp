@@ -5,7 +5,7 @@
 #include <iostream>    // provides cout and cin
 #include <cstdlib>     // provides EXIT_SUCCESS
 #include "sequence.h"
-namespace seqTemplate = test;
+namespace seqTemplate = CS3358_SP2020_A04_Sequence;
 using namespace std;
 
 // PROTOTYPES for functions used by this test program:

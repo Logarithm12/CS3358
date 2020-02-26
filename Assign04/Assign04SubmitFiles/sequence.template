@@ -40,85 +40,81 @@
 //                last item in the sequence).
 #include <cassert>
 
-namespace test
+namespace CS3358_SP2020_A04_Sequence
 {
-	template <class T>
-	sequence<T>::sequence() : used(0), current_index(0) {}
+template <class T>
+sequence<T>::sequence() : used(0), current_index(0) {}
 
-	template <class T>
-	void sequence<T>::start() { current_index = 0; }
+template <class T>
+void sequence<T>::start() { current_index = 0; }
 
-	template <class T>
-	void sequence<T>::end()
+template <class T>
+void sequence<T>::end() { current_index = (used > 0) ? used - 1 : 0; }
+
+template <class T>
+void sequence<T>::advance()
+{
+	assert(is_item());
+	++current_index;
+}
+
+template <class T>
+void sequence<T>::move_back()
+{
+	assert(is_item());
+	if (current_index == 0)
+		current_index = used;
+	else
+		--current_index;
+}
+
+template <class T>
+void sequence<T>::add(const T &entry)
+{
+	assert(size() < CAPACITY);
+
+	size_type i;
+
+	if (!is_item())
 	{
-		current_index = (used > 0) ? used - 1 : 0;
-	}
-
-	template <class T>
-	void sequence<T>::advance()
-	{
-		assert(is_item());
-		++current_index;
-	}
-
-	template <class T>
-	void sequence<T>::move_back()
-	{
-		assert(is_item());
-		if (current_index == 0)
-			current_index = used;
-		else
-			--current_index;
-	}
-
-	template <class T>
-	void sequence<T>::add(const T& entry)
-	{
-		assert(size() < CAPACITY);
-
-		size_type i;
-
-		if (!is_item())
-		{
-			if (used > 0)
-				for (i = used; i >= 1; --i)
-					data[i] = data[i - 1];
-			data[0] = entry;
-			current_index = 0;
-		}
-		else
-		{
-			++current_index;
-			for (i = used; i > current_index; --i)
+		if (used > 0)
+			for (i = used; i >= 1; --i)
 				data[i] = data[i - 1];
-			data[current_index] = entry;
-		}
-		++used;
+		data[0] = entry;
+		current_index = 0;
 	}
-
-	template <class T>
-	void sequence<T>::remove_current()
+	else
 	{
-		assert(is_item());
-
-		size_type i;
-
-		for (i = current_index + 1; i < used; ++i)
-			data[i - 1] = data[i];
-		--used;
+		++current_index;
+		for (i = used; i > current_index; --i)
+			data[i] = data[i - 1];
+		data[current_index] = entry;
 	}
+	++used;
+}
 
-	template <class T>
-	typename sequence<T>::size_type sequence<T>::size() const { return used; }
+template <class T>
+void sequence<T>::remove_current()
+{
+	assert(is_item());
 
-	template <class T>
-	bool sequence<T>::is_item() const { return (current_index < used); }
+	size_type i;
 
-	template <class T>
-	T sequence<T>::current() const
-	{
-		assert(is_item());
+	for (i = current_index + 1; i < used; ++i)
+		data[i - 1] = data[i];
+	--used;
+}
 
-		return data[current_index];
-	}
+template <class T>
+typename sequence<T>::size_type sequence<T>::size() const { return used; }
+
+template <class T>
+bool sequence<T>::is_item() const { return (current_index < used); }
+
+template <class T>
+T sequence<T>::current() const
+{
+	assert(is_item());
+	return data[current_index];
+}
 } // namespace CS3358_SP2020_A04_Sequence

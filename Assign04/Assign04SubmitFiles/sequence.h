@@ -1,21 +1,18 @@
 // FILE: sequence.h
 //////////////////////////////////////////////////////////////////////
-// NOTE: Two separate versions of sequence (one for a sequence of real
-//       numbers and another for a sequence characters are specified,
-//       in two separate namespaces in this header file. For both
-//       versions, the same documentation applies.
 //////////////////////////////////////////////////////////////////////
-// CLASS PROVIDED: sequence (a container class for a list of items,
+// CLASS PROVIDED: sequence (a template container class for a list of items,
 //                 where each list may have a designated item called
 //                 the current item)
 //
 // TYPEDEFS and MEMBER SP2020 for the sequence class:
-//   typedef ____ value_type
+//   typedef T value_type
 //     sequence::value_type is the data type of the items in the sequence.
 //     It may be any of the C++ built-in types (int, char, etc.), or a
 //     class with a default constructor, an assignment operator, and a
-//     copy constructor.
-//   typedef ____ size_type
+//     copy constructor. Because this class is a template class definition,
+//     this value is unused
+//   typedef std::size_t size_type
 //     sequence::size_type is the data type of any variable that keeps
 //     track of how many items are in a sequence.
 //   static const size_type CAPACITY = _____
@@ -46,7 +43,7 @@
 //     Post: If the current item was the first item in the sequence, then
 //           there is no longer any current item. Otherwise, the new current
 //           item is the item immediately before the original current item.
-//   void add(const value_type& entry)
+//   void add(const T& entry)
 //     Pre:  size() < CAPACITY.
 //     Post: A new copy of entry has been inserted in the sequence after
 //           the current item. If there was no current item, then the new
@@ -70,7 +67,7 @@
 //           "current" item that may be retrieved by activating the current
 //           member function (listed below). A false return value indicates
 //           that there is no valid current item.
-//   value_type current() const
+//   T current() const
 //     Pre:  is_item() returns true.
 //     Post: The item returned is the current item in the sequence.
 // VALUE SEMANTICS for the sequence class:
@@ -82,7 +79,7 @@
 
 #include <cstdlib> // provides size_t
 
-namespace test
+namespace CS3358_SP2020_A04_Sequence
 {
 
 	template <typename T>
@@ -91,7 +88,7 @@ namespace test
 	public:
 		// TYPEDEFS and MEMBER SP2020
         typedef T value_type;
-		typedef size_t size_type;
+		typedef std::size_t size_type;
 		static const size_type CAPACITY = 10;
 		// CONSTRUCTOR
 		sequence();
