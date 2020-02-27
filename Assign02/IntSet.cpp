@@ -236,7 +236,7 @@ bool IntSet::add(int anInt)
 {
    bool isAdded{false};
    bool isValidtoAdd{!(contains(anInt))};
-   bool isFull{(used > capacity)};
+   bool isFull{(used >= capacity)};
    if (!isValidtoAdd)
    {
       cerr << "Value already in set" << endl;

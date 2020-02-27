@@ -244,4 +244,8 @@ void ListClear(Node*& headPtr, int noMsg)
 }
 
 // definition of MakeTargetExistOnlyOnceAtTail of Assignment 5 Part 1
+void MakeTargetExistOnlyOnceAtTail(Node*& headPtr, int target)
+{
+   
+}
 
