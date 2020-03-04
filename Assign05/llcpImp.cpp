@@ -3,7 +3,7 @@
 #include "llcpInt.h"
 using namespace std;
 
-int FindListLength(Node* headPtr)
+int FindListLength(Node *headPtr)
 {
    int length = 0;
 
@@ -16,7 +16,7 @@ int FindListLength(Node* headPtr)
    return length;
 }
 
-bool IsSortedUp(Node* headPtr)
+bool IsSortedUp(Node *headPtr)
 {
    if (headPtr == 0 || headPtr->link == 0) // empty or 1-node
       return true;
@@ -29,7 +29,7 @@ bool IsSortedUp(Node* headPtr)
    return true;
 }
 
-void InsertAsHead(Node*& headPtr, int value)
+void InsertAsHead(Node *&headPtr, int value)
 {
    Node *newNodePtr = new Node;
    newNodePtr->data = value;
@@ -37,7 +37,7 @@ void InsertAsHead(Node*& headPtr, int value)
    headPtr = newNodePtr;
 }
 
-void InsertAsTail(Node*& headPtr, int value)
+void InsertAsTail(Node *&headPtr, int value)
 {
    Node *newNodePtr = new Node;
    newNodePtr->data = value;
@@ -54,7 +54,7 @@ void InsertAsTail(Node*& headPtr, int value)
    }
 }
 
-void InsertSortedUp(Node*& headPtr, int value)
+void InsertSortedUp(Node *&headPtr, int value)
 {
    Node *precursor = 0,
         *cursor = headPtr;
@@ -124,7 +124,7 @@ void InsertSortedUp(Node*& headPtr, int value)
    ///////////////////////////////////////////////////////////
 }
 
-bool DelFirstTargetNode(Node*& headPtr, int target)
+bool DelFirstTargetNode(Node *&headPtr, int target)
 {
    Node *precursor = 0,
         *cursor = headPtr;
@@ -147,9 +147,10 @@ bool DelFirstTargetNode(Node*& headPtr, int target)
    return true;
 }
 
-bool DelNodeBefore1stMatch(Node*& headPtr, int target)
+bool DelNodeBefore1stMatch(Node *&headPtr, int target)
 {
-   if (headPtr == 0 || headPtr->link == 0 || headPtr->data == target) return false;
+   if (headPtr == 0 || headPtr->link == 0 || headPtr->data == target)
+      return false;
    Node *cur = headPtr->link, *pre = headPtr, *prepre = 0;
    while (cur != 0 && cur->data != target)
    {
@@ -157,7 +158,8 @@ bool DelNodeBefore1stMatch(Node*& headPtr, int target)
       pre = cur;
       cur = cur->link;
    }
-   if (cur == 0) return false;
+   if (cur == 0)
+      return false;
    if (cur == headPtr->link)
    {
       headPtr = cur;
@@ -171,7 +173,7 @@ bool DelNodeBefore1stMatch(Node*& headPtr, int target)
    return true;
 }
 
-void ShowAll(ostream& outs, Node* headPtr)
+void ShowAll(ostream &outs, Node *headPtr)
 {
    while (headPtr != 0)
    {
@@ -181,7 +183,7 @@ void ShowAll(ostream& outs, Node* headPtr)
    outs << endl;
 }
 
-void FindMinMax(Node* headPtr, int& minValue, int& maxValue)
+void FindMinMax(Node *headPtr, int &minValue, int &maxValue)
 {
    if (headPtr == 0)
    {
@@ -202,7 +204,7 @@ void FindMinMax(Node* headPtr, int& minValue, int& maxValue)
    }
 }
 
-double FindAverage(Node* headPtr)
+double FindAverage(Node *headPtr)
 {
    if (headPtr == 0)
    {
@@ -226,7 +228,7 @@ double FindAverage(Node* headPtr)
    }
 }
 
-void ListClear(Node*& headPtr, int noMsg)
+void ListClear(Node *&headPtr, int noMsg)
 {
    int count = 0;
 
@@ -238,14 +240,48 @@ void ListClear(Node*& headPtr, int noMsg)
       cursor = headPtr;
       ++count;
    }
-   if (noMsg) return;
+   if (noMsg)
+      return;
    clog << "Dynamic memory for " << count << " nodes freed"
         << endl;
 }
 
 // definition of MakeTargetExistOnlyOnceAtTail of Assignment 5 Part 1
-void MakeTargetExistOnlyOnceAtTail(Node*& headPtr, int target)
+void MakeTargetExistOnlyOnceAtTail(Node *&headPtr, int target)
 {
-   
-}
+   Node *cursor = headPtr;
+   Node *precursor = 0;
+   Node *movedNode = 0;
+   bool isInList{false}, isinListMultiple{false};
+   while (headPtr != 0 && cursor != 0)
+   {
+      if (cursor->data == target)
+      {
+         if (!isInList){
+            isInList = true;
+            movedNode = cursor;
+            }
+         else
+            isinListMultiple = true;
+      }
 
+      if (cursor->data !=target && cursor->link == 0 && isInList == false)
+      {
+         Node *added = new Node;
+         added->data = target;
+         added->link = 0;
+         cursor->link = added;
+      }
+      
+      precursor = cursor;
+      cursor = cursor->link;
+
+   }
+   if (headPtr == 0)
+   {
+      Node *added = new Node;
+      added->data = target;
+      added->link = 0;
+      headPtr = added;
+   }
+}
