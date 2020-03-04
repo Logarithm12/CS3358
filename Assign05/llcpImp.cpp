@@ -249,36 +249,141 @@ void ListClear(Node *&headPtr, int noMsg)
 // definition of MakeTargetExistOnlyOnceAtTail of Assignment 5 Part 1
 void MakeTargetExistOnlyOnceAtTail(Node *&headPtr, int target)
 {
-   Node *cursor = headPtr;
-   Node *precursor = 0;
-   Node *movedNode = 0;
-   bool isInList{false}, isinListMultiple{false};
+   Node *cursor{headPtr}, *precursor{headPtr}, *movedNode{0};
+   bool isInList{false}, targetAtHead{false}, aDeleteHappened{false};
+   std::cout << "target is " << target << " and list is " << endl;
+   ShowAll(std::cout, headPtr);
+
    while (headPtr != 0 && cursor != 0)
    {
+      aDeleteHappened = false;
+      std::cout << endl
+                << "new loop iteration" << endl;
+      std::cout << "start of loop cursor->data = " << cursor->data << endl;
+
       if (cursor->data == target)
       {
-         if (!isInList){
+         if (!isInList)
+         {
+            std::cout << "triggered_0" << endl;
             isInList = true;
-            movedNode = cursor;
+            if (cursor == headPtr)
+            {
+               movedNode = cursor;
+               targetAtHead = true;
             }
-         else
-            isinListMultiple = true;
+            else
+            {
+               movedNode = cursor;
+               precursor->link = cursor->link;
+               cursor = precursor;
+            }
+         }
+         //if there is another instance of the target, delete it
+         else if (isInList)
+         {
+            if (cursor->link == 0)
+            {
+               std::cout << "called32" << endl;
+               Node *tmpPtr = cursor;
+               precursor->link = 0;
+               delete tmpPtr;
+               cursor = precursor;
+            }
+            else
+            {
+               std::cout << "triggered_delete" << endl;
+               std::cout << "before delete precursor->data = " << precursor->data << endl;
+               std::cout << "before delete cursor->data = " << cursor->data << endl;
+
+               Node *tmpPtr = cursor;
+               precursor->link = cursor->link;
+               aDeleteHappened = true;
+               cursor = cursor->link;
+               delete tmpPtr;
+
+               ShowAll(std::cout, headPtr);
+               std::cout << "in delete precursor->data = " << precursor->data << endl;
+               std::cout << "in delete cursor->data = " << cursor->data << endl;
+            }
+         }
+      }
+      if (aDeleteHappened && cursor->link == 0 && cursor->data == target)
+      {
+         std::cout << "called" << endl;
+         Node *tmpPtr = cursor;
+         precursor->link = 0;
+         delete tmpPtr;
+         cursor = precursor;
       }
 
-      if (cursor->data !=target && cursor->link == 0 && isInList == false)
+      //if the target isn't in the list, make a node and add it at the end
+      if (cursor->link == 0 && isInList == false)
       {
+         std::cout << "triggered_1" << endl;
          Node *added = new Node;
          added->data = target;
          added->link = 0;
          cursor->link = added;
+         cursor = added;
       }
-      
-      precursor = cursor;
-      cursor = cursor->link;
 
+      //if the target is at the head, move it to the end of the list
+      if (cursor->link == 0 && isInList == true && targetAtHead == true)
+      {
+         std::cout << "triggered_2" << endl;
+         if (headPtr->link != 0)
+         {
+            headPtr = headPtr->link;
+            cursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         break;
+      }
+
+      //if the target is not at the head, move it to the end
+      if (cursor->link == 0 && isInList == true && targetAtHead == false)
+      {
+         std::cout << "triggered_3" << endl;
+         if (precursor->link == 0)
+         {
+            precursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         else
+         {
+            cursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         break;
+      }
+
+      std::cout << "precursor->data = " << precursor->data << endl;
+      std::cout << "cursor->data = " << cursor->data << endl;
+
+      if (cursor != precursor && precursor->link != 0 && !aDeleteHappened)
+         precursor = precursor->link;
+
+      std::cout << "showing list at end of iteration" << endl;
+      ShowAll(std::cout, headPtr);
+
+      if (!aDeleteHappened && cursor != 0)
+      {
+         cursor = cursor->link;
+         std::cout << "cursor = " << cursor << endl;
+      }
    }
+
+   std::cout << "list after the loop" << endl;
+   ShowAll(std::cout, headPtr);
+
+   //if the list is empty, make a node and add it
    if (headPtr == 0)
    {
+      std::cout << "triggered_4" << endl;
       Node *added = new Node;
       added->data = target;
       added->link = 0;
