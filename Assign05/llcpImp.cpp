@@ -249,36 +249,109 @@ void ListClear(Node *&headPtr, int noMsg)
 // definition of MakeTargetExistOnlyOnceAtTail of Assignment 5 Part 1
 void MakeTargetExistOnlyOnceAtTail(Node *&headPtr, int target)
 {
-   Node *cursor = headPtr;
-   Node *precursor = 0;
-   Node *movedNode = 0;
-   bool isInList{false}, isinListMultiple{false};
+   Node *cursor{headPtr}, *precursor{headPtr}, *movedNode{0};
+   bool isInList{false}, targetAtHead{false}, aDeleteHappened{false};
    while (headPtr != 0 && cursor != 0)
    {
+      aDeleteHappened = false;
+
       if (cursor->data == target)
       {
-         if (!isInList){
+         if (!isInList)
+         {
             isInList = true;
-            movedNode = cursor;
+            if (cursor == headPtr)
+            {
+               movedNode = cursor;
+               targetAtHead = true;
             }
-         else
-            isinListMultiple = true;
+            else
+            {
+               movedNode = cursor;
+               precursor->link = cursor->link;
+               cursor = precursor;
+            }
+         }
+         //if there is another instance of the target, delete it
+         else if (isInList)
+         {
+            if (cursor->link == 0)
+            {
+               Node *tmpPtr = cursor;
+               precursor->link = 0;
+               delete tmpPtr;
+               cursor = precursor;
+            }
+            else
+            {
+               Node *tmpPtr = cursor;
+               precursor->link = cursor->link;
+               aDeleteHappened = true;
+               cursor = cursor->link;
+               delete tmpPtr;
+            }
+         }
+      }
+      if (aDeleteHappened && cursor->link == 0 && cursor->data == target)
+      {
+         Node *tmpPtr = cursor;
+         precursor->link = 0;
+         delete tmpPtr;
+         cursor = precursor;
       }
 
-      if (cursor->data !=target && cursor->link == 0 && isInList == false)
+      //if the target isn't in the list, make a node and add it at the end
+      if (cursor->link == 0 && isInList == false)
       {
          Node *added = new Node;
          added->data = target;
          added->link = 0;
          cursor->link = added;
+         cursor = added;
       }
-      
-      precursor = cursor;
-      cursor = cursor->link;
 
+      //if the target is at the head, move it to the end of the list
+      if (cursor->link == 0 && isInList == true && targetAtHead == true)
+      {
+         if (headPtr->link != 0)
+         {
+            headPtr = headPtr->link;
+            cursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         break;
+      }
+
+      //if the target is not at the head, move it to the end
+      if (cursor->link == 0 && isInList == true && targetAtHead == false)
+      {
+         if (precursor->link == 0)
+         {
+            precursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         else
+         {
+            cursor->link = movedNode;
+            movedNode->link = 0;
+            cursor = movedNode;
+         }
+         break;
+      }
+      if (cursor != precursor && precursor->link != 0 && !aDeleteHappened)
+         precursor = precursor->link;
+      if (!aDeleteHappened && cursor != 0)
+      {
+         cursor = cursor->link;
+      }
    }
+
+   //if the list is empty, make a node and add it
    if (headPtr == 0)
    {
+      std::cout << "triggered_4" << endl;
       Node *added = new Node;
       added->data = target;
       added->link = 0;
