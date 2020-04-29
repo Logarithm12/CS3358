@@ -86,7 +86,7 @@ void p_queue::print_array(const char message[]) const
 
 // CONSTRUCTORS AND DESTRUCTOR
 
-p_queue::p_queue(size_type initial_capacity) : used{0}, capacity{initial_capacity}
+p_queue::p_queue(size_type initial_capacity) : capacity{initial_capacity},used{0}
 {
    if (capacity < 1)
    {
@@ -95,7 +95,7 @@ p_queue::p_queue(size_type initial_capacity) : used{0}, capacity{initial_capacit
    heap = new ItemType[capacity];
 }
 
-p_queue::p_queue(const p_queue &src) : used{src.used}, capacity{src.capacity}
+p_queue::p_queue(const p_queue &src) :  capacity{src.capacity},used{src.used}
 {
    heap = new ItemType[capacity];
    for (size_type i = 0; i < used; ++i)
@@ -189,7 +189,6 @@ void p_queue::resize(size_type new_capacity)
 //       NOTE: All existing items in the p_queue are preserved and
 //             used remains unchanged.
 {
-   std::cout << "resize called" << std::endl;
    if (new_capacity < used)
    {
       new_capacity = used;
