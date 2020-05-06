@@ -1,6 +1,4 @@
 #include "btNode.h"
-#include <cstdlib>
-#include <iostream>
 
 void dumpToArrayInOrder(btNode *bst_root, int *dumpArray)
 {
