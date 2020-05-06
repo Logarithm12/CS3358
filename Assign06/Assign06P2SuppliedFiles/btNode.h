@@ -53,6 +53,6 @@ bool bst_remove(btNode *&bst_root, int remInt);
 //       tree. The reference parameter, removed, has been set to a copy of
 //       the removed item.
 // write prototype for bst_remove_max here
-void bst_remove_max(btNode *&bst_root);
+void bst_remove_max(btNode *&bst_root, int &removed);
 
 #endif
